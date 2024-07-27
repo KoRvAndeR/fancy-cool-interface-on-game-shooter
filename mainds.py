@@ -103,10 +103,6 @@ async def stop(ctx):
         music_player.is_playing = False
 
 # korvander's func begin
-@bot.command()
-async def random_word(ctx):
-    random_response = random.choice(config["responses"])
-    await ctx.send(random_response)
 
 
 @bot.event
@@ -123,7 +119,10 @@ async def on_message(message):
     elif "слава украине" in message.content.lower():
         await message.reply("в составе РОССИИ!!!")
 
-    elif "иди нахуй" in message.content.lower():
+    elif "слава россии" in message.content.lower():
+        await message.reply("Героям Слава!!")
+
+    elif "ИДИ НАХУЙ" in message.content.lower():
         await message.reply("Своим помахуй")
     else:
         pass
@@ -139,21 +138,16 @@ async def on_ready():
 
 @bot.command(name='tr')
 async def translate(ctx, lang_to: str, *, text: str):
+    supported_langs = ["BG", "CS", "DA", "DE", "EL", "EN", "ES", "ET", "FI", "FR", "HU", "ID", "IT", "JA", "KO", "LT", "LV", "NB", "NL", "PL", "PT", "RO", "RU", "SK", "SL", "SV", "TR", "UK", "ZH", "AR"]
+    lang_to = lang_to.upper()
+    if lang_to not in supported_langs:
+        await ctx.send(f"Ошибка: Язык '{lang_to}' не поддерживается. Пожалуйста, используйте один из следующих языков: {', '.join(supported_langs)}")
+        return
     try:
-        result = translator.translate_text(text, target_lang=lang_to.upper())
+        result = translator.translate_text(text, target_lang=lang_to)
         await ctx.send(result.text)
     except Exception as e:
         await ctx.send(f"Ошибка: {str(e)}")
 
-@bot.command(name='tr_cz')
-async def tr_cz(ctx, lang_to: str, *, text: str):
-    try:
-
-        result = translator.translate_text(text, source_lang='CS', target_lang=lang_to.upper())
-
-        await ctx.send(result.text)
-    except Exception as e:
-
-        await ctx.send(f"Ошибка: {str(e)}")
 
 bot.run(token_ds)
