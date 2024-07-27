@@ -19,6 +19,7 @@ DEEPL_API_KEY = config["DEEPL_API_KEY"]
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(intents=intents, command_prefix="$")
+bot.remove_command('help')
 
 # cywe func begin
 
@@ -95,7 +96,7 @@ async def leave(ctx):
         await ctx.voice_client.disconnect()
 
 
-@bot.command(name='s')
+@bot.command(name='n')
 async def stop(ctx):
     if ctx.voice_client:
         ctx.voice_client.stop()
@@ -148,6 +149,71 @@ async def translate(ctx, lang_to: str, *, text: str):
         await ctx.send(result.text)
     except Exception as e:
         await ctx.send(f"Ошибка: {str(e)}")
+
+
+
+@bot.command(name='help')
+async def help_command(ctx):
+    embed = discord.Embed(
+            title="💾Main information abt bot:",
+        description=(
+            "ㅤMain prefix is {$} below you can find out many commands:"),color=0x009dff)
+
+    embed.add_field(
+        name="🎶Music commands:",
+        value="ㅤ$p | $n | $l | $s",
+        inline=False
+    )
+
+    embed.add_field(
+        name="🎈Funny commands to play with ur friend:",
+        value="ㅤ$startㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$flipㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$start ruㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$continueㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$start_shooterㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$attackㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$use_potionㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$dodge",
+        inline=False
+    )
+    embed.add_field(
+        name="📋 Info Abt Us::",
+        value=" ㅤInfo abt our group and process of doing bot: (link to our bot )ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ    ",
+        inline=False
+    )
+    embed.set_footer(text="📜for detailed information send: $info_help")
+    await ctx.send(embed=embed)
+
+@bot.command(name='info_help')
+async def info_help(ctx):
+    embed = discord.Embed(
+        title="🔮Detailed information abt bot:",
+        description=(
+            "ㅤEvery command has his own usability and this is info ant them:"), color=0x0091eb)
+
+    embed.add_field(
+        name="🎼Music info commands:",
+        value="ㅤ$p - Send this to play your track then space and your url to youtube videoㅤㅤ"
+              "ㅤ$n - Send this to skip your trackㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$s - Send this to stop ur trackㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$l - Send this to just leave bot from vc",
+        inline=False
+    )
+    embed.add_field(
+        name="🎈Funny game's detailed info:",
+        value="ㅤ$start - Command to start a game on based EN languageㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$start ru - Command to start a game on RU languageㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$continue - Command to continue your adventure in gameㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$start_shooter - Command to start play shooter text gameㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$attack - Command to attack your enemy's in shooter gameㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$use_potion - Command to use your poison in shooter gameㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$dodge - Command to dodge enemy's in shooter gameㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"
+              "ㅤ$flip - Command to start play common game {Heads and Tails}",
+        inline=False
+    )
+    embed.set_footer(text="ㅤ©prod by: cywwee, korvander, artimok")
+    await ctx.send(embed=embed)
 
 
 bot.run(token_ds)
