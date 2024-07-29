@@ -141,32 +141,32 @@ async def on_ready():
 # Определение сообщений на разных языках
 messages = {
     "ru": {
-        "start": "Ты идешь по улице, и видишь развилку. Что будешь делать?\n1. Пойти по тропинке\n2. Развернуться и вернуться домой",
-        "stage_1": "Ты вошли в лес грибов с большими шляпками и видите дрочущего монстра. Что будешь делать?\n1. Помочь кончить\n2. Убежать нахуй",
-        "stage_2": "После того как монстр кончил он указал тебе странную дорогу.  Что будешь делать?\n1. Пойдешь по странной дороге\n2. Убежать в страхе домой",
-        "stage_3": "Ты идешь по тропинке и видишь как 13 гномов ебут барана.  Что будешь делать?\n1. Помочь барашке и избить этих уебков\n2. Резко запрыгнуть на баран и ускакать от них обратно домой",
-        "stage_4": "Барашка привел тебя к великому Рамзану Кадырову.  Что будешь делать?\n1. Выслушать его",
-        "stage_5": "Вы выслушали его величество и он поручил вам украсать золтую овечку.  Что будешь делать?\n1. Выполнить приказ\n2. Ослушаться и получить наказание",
-        "stage_6": "Ты добираешься до скрытой долины под названием 'Пидрильщина'  Что будешь делать?\n1. Найти золотую овечку\n2. Сбежать и сохранить себе жизнь",
-        "stage_7": "Ты находишь странный храм который охраняет 15 чеченцев.  Что будешь делать?\n1. Найти вход который никто не охраняет\n2. Побежать на пролом",
-        "stage_8": "Ты нашел вход и вошел с черного входа, ты сразу увидел как какойто мужчина обнимает золотую овечку.  Что будешь делать?\n1. Окуратно подойдешь сзади и оглушишь мужчину взять овечку и убежать\n2. Подойдешь сзади и задушишь мужчину взять овечку и убежать",
-        "stage_9": "Ты успешно украл овечку но мужчина из последних сил крикнул чечнцам что вы украли его жену.  Что будешь делать?\n1. Побежишь через дорогу которая кишит пауками и прибежишь к царю\n2. Побежишь через дорогу которая кишит бешеными собаками и оставь все себе",
-        "end_win": "Поздравляем, вы выиграли!",
-        "end_lose": "Конец игры, ты умер."
+        "start": "**Ты идешь по улице, и видишь развилку. Что будешь делать?\n>>> 1. Пойти по тропинке\n2. Развернуться и вернуться домой**",
+        "stage_1": "**Ты вошли в лес грибов с большими шляпками и видите дрочущего монстра. Что будешь делать?\n>>> 1. Убежать нахуй\n2. Помочь кончить**",
+        "stage_2": "**После того как монстр кончил он указал тебе странную дорогу.  Что будешь делать?\n>>> 1. Убежать в страхе домой\n2. Пойдешь по странной дороге**",
+        "stage_3": "**Ты идешь по тропинке и видишь как 13 гномов ебут барана.  Что будешь делать?\n>>> 1.Помочь барашке и избить этих уебков\n2.Резко запрыгнуть на баран и ускакать от них обратно**",
+        "stage_4": "**Барашка привел тебя к великому Рамзану Кадырову.  Что будешь делать?\n>>> 1. Выслушать его**",
+        "stage_5": "**Вы выслушали его величество и он поручил вам украсать золтую овечку.  Что будешь делать?\n>>> 1.Не подчиниться и понести наказание\n2.Выполнить приказ**",
+        "stage_6": "**Ты добираешься до скрытой долины под названием 'Пидрильщина'  Что будешь делать?\n>>> 1. Найти золотую овечку\n2. Сбежать и сохранить себе жизнь**",
+        "stage_7": "**Ты находишь странный храм который охраняет 15 чеченцев.  Что будешь делать?\n>>> 1. Найти вход который никто не охраняет\n2. Побежать на пролом**",
+        "stage_8": "**Ты нашел вход и вошел с черного входа, ты сразу увидел как какойто мужчина обнимает золотую овечку.  Что будешь делать?\n>>> 1. Подойдешь сзади и задушишь мужчину взять овечку и убежать\n2. Окуратно подойдешь сзади и оглушишь мужчину взять овечку и убежать**",
+        "stage_9": "**Ты успешно украл овечку но мужчина из последних сил крикнул чечнцам что вы украли его жену.  Что будешь делать?\n>>> 1. Побежишь через дорогу которая кишит бешеными собаками и оставь все себе\n2. Побежишь через дорогу которая кишит пауками и прибежишь к царю**$",
+        "end_win": "**🏆Поздравляем, вы выиграли!**",
+        "end_lose": "**😥Конец игры, ты умер.**"
     },
     "en": {
-        "start": "You are walking down the street and come across a fork. What will you do?\n1. Go down the path\n2. Turn around and go home",
-        "stage_1": "You enter a mushroom forest with large caps and see a monster masturbating. What will you do?\n1. Help him finish\n2. Run away",
-        "stage_2": "After the monster finishes, he points you to a strange path. What will you do?\n1. Follow the strange path\n2. Run away to the large mushrooms",
-        "stage_3": "You walk down the path and see 13 gnomes having sex with a ram. What will you do?\n1. Help the ram and beat up the gnomes\n2. Quickly jump on the ram and escape back home",
-        "stage_4": "The ram leads you to the great Ramzan Kadyrov. What will you do?\n1. Listen to him",
-        "stage_5": "You have listened to his majesty and he has tasked you with capturing a golden sheep. What will you do?\n1. Carry out the order\n2. Disobey and face punishment",
-        "stage_6": "You arrive at a hidden valley called 'Pidrilshchina'. What will you do?\n1. Find the golden sheep\n2. Flee and save your life",
-        "stage_7": "You find a strange temple guarded by 15 Chechens. What will you do?\n1. Find an unguarded entrance\n2. Charge through",
-        "stage_8": "You found the entrance and went in through the back, where you immediately saw a man hugging the golden sheep. What will you do?\n1. Carefully approach from behind, knock out the man, grab the sheep, and run\n2. Approach from behind and strangle the man, grab the sheep, and run",
-        "stage_9": "You successfully stole the sheep, but the man, with his last strength, shouted to the Chechens that you stole his wife. What will you do?\n1. Run across the road infested with spiders and get to the king\n2. Run across the road infested with rabid dogs and keep everything for yourself",
-        "end_win": "Congratulations, you won!",
-        "end_lose": "The game is over, you died."
+        "start": "**You are walking down the street and come across a fork. What will you do?\n>>> 1. Go down the path\n2. Turn around and go home**",
+        "stage_1": "**You enter a mushroom forest with large caps and see a monster masturbating. What will you do?\n>>> 1.Run away\n2. Help him finish**",
+        "stage_2": "**After the monster finishes, he points you to a strange path. What will you do?\n>>> 1.Run away to the large mushrooms\n2. Follow the strange path**",
+        "stage_3": "**You walk down the path and see 13 gnomes having sex with a ram. What will you do?\n>>> 1. Help the ram and beat up the gnomes\n2. Quickly jump on the ram and escape back home**",
+        "stage_4": "**The ram leads you to the great Ramzan Kadyrov. What will you do?\n>>> 1. Listen to him**",
+        "stage_5": "**You have listened to his majesty and he has tasked you with capturing a golden sheep. What will you do?\n>>> 1. Disobey and face punishment\n2. Carry out the order**",
+        "stage_6": "**You arrive at a hidden valley called 'Pidrilshchina'. What will you do?\n>>> 1. Find the golden sheep\n2. Flee and save your life**",
+        "stage_7": "**You find a strange temple guarded by 15 Chechens. What will you do?\n>>> 1. Find an unguarded entrance\n2. Charge through**",
+        "stage_8": "**You found the entrance and went in through the back, where you immediately saw a man hugging the golden sheep. What will you do?\n>>> 2. Approach from behind and strangle the man, grab the sheep, and run\n2. Carefully approach from behind, knock out the man, grab the sheep, and run**",
+        "stage_9": "**You successfully stole the sheep, but the man, with his last strength, shouted to the Chechens that you stole his wife. What will you do?\n>>> 1. Run across the road infested with rabid dogs and keep everything for yourself\n2. Run across the road infested with spiders and get to the king**",
+        "end_win": "**🏆Congratulations, you won!**",
+        "end_lose": "**😥The game is over, you died.**"
     }
 }
 
@@ -190,12 +190,12 @@ class AdventureGame:
             else:
                 return self.end_game()
         elif self.stage == 1:
-            if choice == "1":
+            if choice == "2":
                 self.stage = 2
             else:
                 return self.end_game()
         elif self.stage == 2:
-            if choice == "1":
+            if choice == "2":
                 self.stage = 3
             else:
                 return self.end_game()
@@ -210,7 +210,7 @@ class AdventureGame:
             else:
                 return self.end_game()
         elif self.stage == 5:
-            if choice == "1":
+            if choice == "2":
                 self.stage = 6
             else:
                 return self.end_game()
@@ -225,12 +225,12 @@ class AdventureGame:
             else:
                 return self.end_game()
         elif self.stage == 8:
-            if choice == "1":
+            if choice == "2":
                 self.stage = 9
             else:
                 self.stage = 10
         elif self.stage == 9:
-            if choice == "1":
+            if choice == "2":
                 self.stage = 10
             else:
                 return self.end_game()
